@@ -32,7 +32,7 @@ module LogStashLogger
               end
 
       event['severity'] ||= severity
-      #event.type = progname
+      event.type = defined?(Rails) ? 'rails' : 'ruby'
 
       event['host'] ||= HOST
 
